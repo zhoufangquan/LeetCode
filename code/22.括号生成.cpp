@@ -3,12 +3,15 @@
  *
  * [22] 括号生成
  */
+#include "HF.h"
 
 // @lc code=start
 class Solution {
 public:
-    vector<string> generateParenthesis(int n) {
+    map<string, bool> ma;
 
+    vector<string> generateParenthesis(int n) {
+        
     }
 };
 // @lc code=end
