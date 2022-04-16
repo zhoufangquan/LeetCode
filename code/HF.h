@@ -96,6 +96,18 @@ vector<int> stringToIntegerVector(string input) {
     return output;
 }
 
+vector<vector<char> > get_CharVec(int r, int c){
+    vector<vector<char> > ans;
+    for(int i=0;i<r;i++){
+        vector<char> temp(c);
+        for(int j=0;j<c;j++){
+            cin>>temp[j];
+        }
+        ans.push_back(temp);
+    }
+    return ans;
+}
+
 ListNode* stringToListNode(string input) {
     // Generate list from the input
     vector<int> list = stringToIntegerVector(input);
