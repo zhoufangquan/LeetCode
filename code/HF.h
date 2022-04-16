@@ -20,7 +20,54 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+TreeNode *get_tree(string data){
+    if(data.length() == 2) return NULL;
+    queue<string> arr;
+    string temp = "";
+    for(int i=1;i<data.length()-1;i++){
+        if(data[i] == ','){
+            arr.push(temp);
+            temp = "";
+        }
+        else{
+            temp += data[i];
+        }
+    }
+    arr.push(temp);
+    
+    TreeNode *ans = new TreeNode(stoi(arr.front()));
+    arr.pop();
+    queue<TreeNode *> Q;
+    Q.push(ans);
 
+    while(!Q.empty() && !arr.empty()){
+        TreeNode *root = Q.front(); Q.pop();
+        string l = arr.front(); arr.pop();
+        string r;
+        if(arr.size() > 0){
+            r = arr.front(); arr.pop();
+        }
+        else{
+            r = "null";
+        }
+        if(l == "null"){
+            root->left = NULL;
+        }
+        else{
+            root->left = new TreeNode(stoi(l));
+            Q.push(root->left);
+        }
+        if(r == "null"){
+            root->right = NULL;
+        }
+        else{
+            root->right = new TreeNode(stoi(r));
+            Q.push(root->right);
+        }
+    }
+
+    return ans;
+}
 
 void trimLeftTrailingSpaces(string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {

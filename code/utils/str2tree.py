@@ -14,10 +14,12 @@ def get_tree(data: str) -> TreeNode:
     Queue = [tree]
 
     while len(Queue) > 0 and len(data) > 0:
-        root = Queue[0]
-        Queue.pop(0)
-        l, r = data[:2]
-        data = data[2:]
+        root = Queue.pop(0)
+        l = data.pop(0)
+        if len(data) > 0:
+            r = data.pop(0)
+        else:
+            r = 'null'
         if l != 'null':
             root.left = TreeNode(int(l))
             Queue.append(root.left)
