@@ -3,7 +3,7 @@
  *
  * [529] 扫雷游戏
  */
-
+#include"HF.h"
 // @lc code=start
 class Solution {
 public:
