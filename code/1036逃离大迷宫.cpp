@@ -19,8 +19,8 @@ public:
             y.push_back(pot[1]);
         }
         x.push_back(source[0]);
-        y.push_back(source[1]);
         x.push_back(target[0]);
+        y.push_back(source[1]);
         y.push_back(target[1]);
         sort(x.begin(), x.end());
         sort(y.begin(), y.end());
@@ -57,6 +57,7 @@ public:
         if(x[x.size()-1] == 999999) r = row[999999]+1;
         if(y[y.size()-1] == 999999) c = clo[999999]+1;
 
+
         vis.resize(r, {});
         for(auto &item: vis)
             item.resize(c, true);
@@ -70,15 +71,7 @@ public:
             pot[1] = clo[pot[1]];
             vis[pot[0]][pot[1]] = false;
         }
-
-        for(auto &i:vis){
-            for(bool j:i){
-                cout<<j<<' ';
-            }
-            cout<<'\n';
-        }
-        cout<<source[0]<<' '<<source[1]<<'\n';
-        cout<<target[0]<<' '<<target[1]<<'\n';
+        
         bool ans = false;
         queue<pair<int, int>> Q;
         Q.push({source[0], source[1]});
@@ -138,6 +131,8 @@ int main(){
 [2,2]
 [7,3]
 
+
+[[0,999991],[0,999993],[0,999996],[1,999996],[1,999997],[1,999998],[1,999999]]\n[0,999997]\n[0,2]
 7
 0 999991
 0 999993
