@@ -3,7 +3,7 @@
  *
  * [675] 为高尔夫比赛砍树
  */
-
+#include"HF.h"
 // @lc code=start
 class Solution {
 public:
