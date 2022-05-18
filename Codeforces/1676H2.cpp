@@ -4,12 +4,13 @@ using namespace std;
 
 int arr[400005];
 
-int slove_segmentTree(int n)
+int solve_segmentTree(int n)
 {
     return 0;
 }
 
-long long slove_merge(int n)
+
+long long solve_merge(int n)
 {
     int len = 1;
     long long ans = 0;
@@ -82,7 +83,7 @@ int main()
         {
             scanf("%d", arr + i);
         }
-        long long ans = slove_merge(n);
+        long long ans = solve_merge(n);
         cout << ans << '\n';
     }
     return 0;
