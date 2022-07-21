@@ -38,12 +38,13 @@ public:
 
     string arrangeWords(string text) {
         vector<string> ss;
-
+        text[0] = text[0] + 32;
         ss = split(text);
 
         sort(ss.begin(), ss.end(), cmp);
-
-        return join(ss);
+        string ans = join(ss);
+        ans[0] = ans[0] - 32;
+        return ans;
     }
 };
 // @lc code=end
@@ -51,6 +52,7 @@ public:
 int main(){
     Solution test;
     string IN;
-    cin>>IN;
+    getline(cin, IN);
+    // cout<<IN;
     cout<<test.arrangeWords(IN);
 }
