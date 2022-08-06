@@ -14,7 +14,7 @@ public:
         for(int i=0;i<s.length();i++){
             int l = i-1;
             int r = i+1;
-            while(l>=0 && r<s.length() && s[l] == s[r]){
+            while(l>0 && r<s.length() && s[l] == s[r]){
                 ans ++;
                 l--;
                 r++;
@@ -26,7 +26,7 @@ public:
             if(s[i] != s[i+1]) continue;
             int l = i;
             int r = i+1;
-            while(l>=0 && r<s.length() && s[l] == s[r]){
+            while(l>0 && r<s.length() && s[l] == s[r]){
                 ans ++;
                 l--;
                 r++;

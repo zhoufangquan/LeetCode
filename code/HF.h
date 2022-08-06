@@ -9,7 +9,7 @@ using namespace std;
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
- 
+
 // Definition for a binary tree node.
 struct TreeNode {
     int val;
@@ -136,4 +136,3 @@ string listNodeToString(ListNode* node) {
     }
     return "[" + result.substr(0, result.length() - 2) + "]";
 }
-
