@@ -41,10 +41,9 @@ public:
         text[0] = text[0] + 32;
         ss = split(text);
 
-        stable_sort(ss.begin(), ss.end(), cmp);
-        string ans = join(ss);
-        ans[0] = ans[0] - 32;
-        return ans;
+        sort(ss.begin(), ss.end(), cmp);
+
+        return join(ss);
     }
 };
 // @lc code=end
@@ -52,6 +51,6 @@ public:
 int main(){
     Solution test;
     string IN;
-    getline(cin, IN);
+    cin>>IN;
     cout<<test.arrangeWords(IN);
 }
