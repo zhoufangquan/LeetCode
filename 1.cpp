@@ -1,49 +1,79 @@
-/*
- * @lc app=leetcode.cn id=647 lang=cpp
- *
- * [647] 回文子串
- */
-#include"HF.h"
-// @lc code=start
-class Solution {
-public:
-    int countSubstrings(string s) {
-        int ans = s.length();
+#include <stdio.h>
 
-        // 回文串的长度是奇数
-        for(int i=0;i<s.length();i++){
-            int l = i-1;
-            int r = i+1;
-            while(l>0 && r<s.length() && s[l] == s[r]){
-                ans ++;
-                l--;
-                r++;
-            }
+main()
+{
+    int i, j;
+
+    char dancer1[4][4] = {
+        {' ', 'o', ' '},
+        {'/', '|', '\\'},
+        {'/', ' ', '\\'}};
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            printf("%c", dancer1[i][j]);
         }
-
-        // 回文串的长度是偶数
-        for(int i=0;i<s.length()-1;i++){
-            if(s[i] != s[i+1]) continue;
-            int l = i;
-            int r = i+1;
-            while(l>0 && r<s.length() && s[l] == s[r]){
-                ans ++;
-                l--;
-                r++;
-            }
-        }
-
-        return ans;
+        printf("\n");
     }
-};
-// @lc code=end
 
-int main(){
+    char dancer2[4][4] = {
+        {' ', 'o', ')'},
+        {'/', '|', ' '},
+        {'/', ' ', '\\'}};
 
-    Solution test;
-    string s;
-    cin>>s;
-    cout<<test.countSubstrings(s);
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            printf("%c", dancer2[i][j]);
+        }
+        printf("\n");
+    }
+
+    char dancer3[4][4] = {
+        {' ', 'o', ' '},
+        {'/', '|', '>'},
+        {'/', ' ', '\\'}};
+
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            printf("%c", dancer3[i][j]);
+        }
+        printf("\n");
+    }
+
+    char dancer4[4][4] = {
+        {' ', 'o', ' '},
+        {'/', '|', '\\'},
+        {'/', ' ', '>'}};
+
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            printf("%c", dancer4[i][j]);
+        }
+        printf("\n");
+    }
 
     return 0;
 }
+
+/*
+
+假设dancer的初始状态时
+ o
+/|\
+/ \
+我们现在规定下面的命令形式：a-b
+a 是1时，表示动手臂；是2时，表示动腿；
+
+在a是1的情况下， b 是1时， 表示动手臂伸直；是2时，表示动手臂蜷缩；是3时，表示手臂摸头
+在a是2的情况下， b 是1时， 表示动腿伸直；是2时，表示动腿蜷缩；
+
+显然命令只有 1-1  1-2  1-3  2-1  2-2
+
+*/

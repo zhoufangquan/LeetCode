@@ -15,10 +15,10 @@ vi dist;
 priority_queue<ii, vector<ii>, greater<ii>> pq;
  void dijkstra(int s)
 {
-     dist.assign(n, 1e9);
+    dist.assign(n, 1e9);
     dist[s] = 0;
-     pq.push(ii(0, s));
-     while (!pq.empty())
+    pq.push(ii(0, s));
+    while (!pq.empty())
     {
         ii front = pq.top(); pq.pop();
         int d = front.first, u = front.second;
